@@ -7,6 +7,6 @@ function precoComDesconto(jogo, config) {
     return jogo.preco;
   }
   const promocao = campanha.promocoes[jogo.id];
-  const desconto = promocao.percentual / 100;
+  const desconto = (promocao ? promocao.percentual : 0) / 100;
   return Math.round(jogo.preco * (1 - desconto) * 100) / 100;
 }
